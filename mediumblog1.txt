@@ -1,0 +1,84 @@
+
+Account Abstraction — Goodbye EOAs, Say Hello To Programmable Accounts
+Darlington Nnam
+Darlington Nnam
+
+·
+Follow
+
+4 min read
+·
+Aug 24, 2022
+5
+
+
+TLDR: "While, EOAs bother about the how, and are subscribed to some rigid hard-coded logics, account abstractions(contract accounts), are more bothered about the who, and are programmable and flexible."
+
+Although the evolution of blockchain technologies, have been quite rapid, and fascinating, the complexities and high precisions required to use most of these, have plagued mass adoption.
+
+Like i mean, a normal guy down the street, would rarely care so much about decentralizing his assets, if it means waking up next day to a hacked wallet, or an inaccessible wallet due to a flimsy mistake of forgetting where he wrote down some fuzzy passphrase or whatever it’s called…
+
+Woah, before we get lost in the numerous issues that plague mass adoption in web3, let’s go straight into what today’s article centres on…Account Abstraction, but to understand Account Abstraction, we need to first understand how Accounts work on Ethereum.
+
+Ethereum has this bi-account model, that categorizes the numerous accounts on Ethereum into two major sections:
+
+Externally owned accounts.
+Contract accounts.
+To differentiate these in the most simplest words, Externally owned accounts are what their name implies, external accounts, controlled by external individuals foreign to the EVM, and accessed by a passphrase, private key etc. e.g are your Metamask, Trust wallet etc. meanwhile, unlike EOAs(Externally owned accounts), contract accounts are accounts that contains some contract codes, are programmable and native to the EVM. For this article, we dwell more on EOAs.
+
+Externally owned accounts (EOAs)
+
+To understand how externally owned accounts work, take a minute, close your eyes and visualize how you carry out transactions (e.g sending Ether to a friend).
+
+To send some Ether, you create a transaction from your wallet e.g metamask, then you sign this transaction, pay some gas, and then submit it to the network to be mined. Your externally owned account serves as a medium or gate for you to interact, and transact on the network, but ever wondered how Ethereum checks to guarantee you are really the one carrying out that particular transaction? Yeap you guessed right..Signatures.
+
+Every externally owned account on Ethereum, is associated with a cryptographic object known as a signer. This signer comprises of two important pieces (a private key and a public key). The relationship between this two, is secured by some complex cryptography maths, that ensures that if i sign a message or transaction with my private key, and hand over my public key to you, you could always verify using my public key, that the transaction was truly signed by my private key, but still have no knowledge of what my private key is. yeah you read my mind, zero knowledge proofs😅
+
+(Check out a deeper dive into Ethereum’s Signature Cryptography here)
+
+In essence, in as much as, i am the only person with access to my private key, i can be rest assured, that i have sole access to my wallet, but there is a little catch here..
+
+“What if i lose my private keys, or someone else has access to them?”
+Yeah some big issues there, because Ethereum only cares about the signature, has no knowledge of who you are or where you come from, so if you lose your signature, you lose everything, and if someone else has your private keys, he’s got everything.
+
+But hope’s not lost! going back to the beginning of the article, we said something very vital..
+
+"While, EOAs bother about the how, and are subscribed to some rigid hard-coded logics, account abstractions(contract accounts), are more bothered about the who, and are programmable and flexible."
+How about we come up with a means to separate or abstract the account from the owner? A means by which we could program accounts, to do more than just hold tokens and sign transactions? Say Hello to Account Abstraction.
+
+At a high level, account abstraction refers to the abstraction of the concept of accounts and related mechanisms from the core protocol of the chain. So while identifying users is key to the system’s operation, we look to allow flexibility and extensibility in aspects relating to how accounts are verified and operate. This opens doors to unimaginable possibilities! for example:
+
+Creating accounts that uses a totally different signing scheme not restricted to Ethereum’s ECDSA
+Creating a single wallet controlled by multiple keys
+Pay gas fees in a different token than ETH.
+Smart contract features that integrates social recovery, reducing the highly prevalent risk of funds being lost or stolen
+Allowing a different wallet pay another wallet’s gas fees, eliminating the need for relayers, and many more endless possibilities.
+Contract accounts enabled by account abstraction, hides all the logic behind a “who”, the contract address, and while a signature scheme is still needed to authorize transactions, unlike EOAs there are more flexibilities and endless programmable possibilities that could potentially change the way we transact on the EVM, and greatly improve mass adoption.
+
+Although this feature is one that has been highly desired in the Ethereum community, it’s far more difficult to implement directly on the EVM. But it’s currently a popular feature amongst L2s like Starknet and ZKSync.
+
+We would most likely go through a Starknet implementation in Cairo in a future blog post, but until then, you could check out Openzeppelin’s cairo implementation here.
+
+Coming up in future blog posts:
+
+The scalability game: difference between plasma, side chains, state channels and rollups
+Setting up your Cairo development environment with Protostar
+Lets connect:
+
+LinkedIn: https://www.linkedin.com/in/nnamdarlington
+
+Twitter: https://twitter.com/0xdarlington
+
+Github: https://github.com/Darlington02
+
+Account Abstraction
+Ethereum
+Cryptography
+Zero Knowledge Proofs
+Starknet
+
+
+Darlington Nnam
+Written by Darlington Nnam
+119 Followers
+Blockchain developer, and Zk researcher
